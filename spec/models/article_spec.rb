@@ -23,4 +23,11 @@ describe Article do
     end
     it { @article.should_not be_valid }
   end
+
+  context "title が設定されている場合" do
+    before do
+      @article = Article.new(title: "初めてのブログ")
+    end
+    it { @article.should be_valid }
+  end
 end
