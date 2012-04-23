@@ -16,4 +16,11 @@ describe Article do
       @article.body.should == "最初の記事です。"
     end
   end
+
+  context "title が設定されていない場合" do
+    before do
+      @article = Article.new
+    end
+    it { @article.should_not be_valid }
+  end
 end
